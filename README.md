@@ -43,28 +43,14 @@ cd ai-insights-backend
 python -m venv .venv
 source .venv/bin/activate  
 
-# Create project structure
-mkdir -p app/{api/endpoints,core,models,services,utils}
-mkdir -p tests
-touch app/__init__.py app/api/__init__.py app/api/endpoints/__init__.py
-touch app/core/__init__.py app/models/__init__.py app/services/__init__.py
-touch app/utils/__init__.py tests/__init__.py
-```
 
 ### 2. Install Dependencies
 
 ```bash
-pip install fastapi==0.104.1 uvicorn[standard]==0.24.0 python-multipart==0.0.6 \
-    pydantic==2.5.0 pydantic-settings==2.1.0 sqlalchemy==2.0.23 \
-    pandas==2.1.3 numpy==1.25.2 openpyxl==3.1.2 \
-    pytest==7.4.3 pytest-asyncio==0.21.1 httpx==0.25.2
+pip install -r requirements.tsx
 ```
 
-### 3. Create Files
-
-Copy the code from this artifact into the respective files according to the project structure.
-
-### 4. Run the Application
+### 3. Run the Application
 
 ```bash
 # Development server
@@ -74,7 +60,7 @@ uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000 --ws websoc
 uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000 --ws websockets
 ```
 
-### 5. Run Tests
+### 4. Run Tests
 
 ```bash
 # Run all tests
